@@ -1,0 +1,15 @@
+security:
+  photon:
+    username: photonqa
+    password: photonqa@123
+  personal:
+    username: prabhakar
+    password: prabhakar@123
+lms:
+  message: "Welcome to Leave Services related QA APIs "
+  contactDetails:
+    name: "Prabhakar - QA Lead"
+    email: "prabhakar@lms.com"
+  onCallSupport:
+    - 953867226
+    - 676589292

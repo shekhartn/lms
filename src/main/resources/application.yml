@@ -1,6 +1,8 @@
 server:
   port: 8888
 spring:
+  profiles:
+    active: dev
   application:
     name: lms
   jpa:
@@ -28,10 +30,4 @@ sqlserver:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
-security:
-  photon:
-    username: photon
-    password: photon@123
-  personal:
-    username: shekhar
-    password: Shekhar@123
+
