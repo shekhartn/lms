@@ -1,0 +1,15 @@
+security:
+  photon:
+    username: photon
+    password: photon@123
+  personal:
+    username: shekhar
+    password: Shekhar@123
+lms:
+  message: "Welcome to Leave Services related DEV APIs "
+  contactDetails:
+    name: "Shekhar - DEV Lead"
+    email: "shekharthr@lms.com"
+  onCallSupport:
+    - 9000626559
+    - 7356411673

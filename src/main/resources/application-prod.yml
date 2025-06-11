@@ -1,0 +1,15 @@
+security:
+  photon:
+    username: photonprod
+    password: photonprod@123
+  personal:
+    username: bharath
+    password: bharath@123
+lms:
+  message: "Welcome to Leave Services related PROD APIs "
+  contactDetails:
+    name: "Bharath - PROD Lead"
+    email: "bharath@lms.com"
+  onCallSupport:
+    - 9948373056
+    - 8701472885
