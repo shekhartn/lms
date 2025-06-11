@@ -1,6 +1,7 @@
 package com.photon.lms.controller;
 
 
+import com.photon.lms.dto.ContactInfoDto;
 import com.photon.lms.dto.AuthRequest;
 import com.photon.lms.dto.LeaveRequest;
 import com.photon.lms.primary.entity.Leave;
@@ -8,6 +9,7 @@ import com.photon.lms.secondary.entity.SearchHistoryVO;
 import com.photon.lms.service.ILeaveService;
 import com.photon.lms.service.impl.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -28,7 +30,8 @@ public class LeaveController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
+    @Autowired
+    private  ContactInfoDto contactInfo;
     @GetMapping
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public List<Leave> getAllTheProducts() {
@@ -62,5 +65,10 @@ public class LeaveController {
             throw new UsernameNotFoundException("invalid user request !");
         }
 
+    }
+
+    @GetMapping("/contact-info")
+    public ResponseEntity<ContactInfoDto> getContactInfo() {
+        return ResponseEntity.ok(contactInfo);
     }
 }
