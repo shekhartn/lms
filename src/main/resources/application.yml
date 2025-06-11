@@ -3,19 +3,33 @@ server:
 spring:
   application:
     name: lms
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show_sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+# Default MySQL config
+mysql:
   datasource:
     url: jdbc:mysql://localhost:3306/lms
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
+sqlserver:
+  datasource:
+    url: jdbc:sqlserver://10.100.10.56;databaseName=NTT_UAT;encrypt=true;trustServerCertificate=true
+    username: timesheet_dev_user
+    password: PH0T0NTS@231
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+
 security:
   photon:
     username: photon

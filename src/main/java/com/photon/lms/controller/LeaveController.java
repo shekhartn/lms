@@ -3,7 +3,8 @@ package com.photon.lms.controller;
 
 import com.photon.lms.dto.AuthRequest;
 import com.photon.lms.dto.LeaveRequest;
-import com.photon.lms.entity.Leave;
+import com.photon.lms.primary.entity.Leave;
+import com.photon.lms.secondary.entity.SearchHistoryVO;
 import com.photon.lms.service.ILeaveService;
 import com.photon.lms.service.impl.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,11 @@ public class LeaveController {
     public List<Leave> getLeaveDetailsByEmployeeCode(@RequestBody LeaveRequest leaveRequest) {
         return service.getLeaveDetailsByEmployeeCode(leaveRequest);
     }
+    @PostMapping("/gettimeoffhistory")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
+    public List<SearchHistoryVO> getTimeOffHistory(@RequestBody LeaveRequest leaveRequest) {
+        return service.getTimeOffHistory(leaveRequest);
+    }
 
 
     @PostMapping("/authenticate")
@@ -55,7 +61,6 @@ public class LeaveController {
         } else {
             throw new UsernameNotFoundException("invalid user request !");
         }
-
 
     }
 }

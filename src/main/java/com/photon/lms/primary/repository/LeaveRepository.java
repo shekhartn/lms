@@ -1,7 +1,7 @@
-package com.photon.lms.repository;
+package com.photon.lms.primary.repository;
 
 
-import com.photon.lms.entity.Leave;
+import com.photon.lms.primary.entity.Leave;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

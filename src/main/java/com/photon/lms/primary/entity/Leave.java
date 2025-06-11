@@ -1,4 +1,4 @@
-package com.photon.lms.entity;
+package com.photon.lms.primary.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

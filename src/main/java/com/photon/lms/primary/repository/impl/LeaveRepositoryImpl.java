@@ -1,7 +1,7 @@
-package com.photon.lms.repository.impl;
+package com.photon.lms.primary.repository.impl;
 
-import com.photon.lms.entity.Leave;
-import com.photon.lms.repository.LeaveRepositoryCustom;
+import com.photon.lms.primary.entity.Leave;
+import com.photon.lms.primary.repository.LeaveRepositoryCustom;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.ParameterMode;
 import jakarta.persistence.PersistenceContext;
