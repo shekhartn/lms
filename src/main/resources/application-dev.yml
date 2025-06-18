@@ -1,10 +1,10 @@
 security:
   photon:
     username: photon
-    password: photon@123
+    password: cGhvdG9uQDEyMw==
   personal:
     username: shekhar
-    password: Shekhar@123
+    password: U2hla2hhckAxMjM=
 lms:
   message: "Welcome to Leave Services related DEV APIs "
   contactDetails:
@@ -13,3 +13,6 @@ lms:
   onCallSupport:
     - 9000626559
     - 7356411673
+#logging:
+#  file:
+#    name: logs/app.log

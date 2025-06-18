@@ -1,10 +1,10 @@
 security:
   photon:
     username: photonqa
-    password: photonqa@123
+    password: cGhvdG9ucWFAMTIz
   personal:
     username: prabhakar
-    password: prabhakar@123
+    password: cHJhYmhha2FyQDEyMw==
 lms:
   message: "Welcome to Leave Services related QA APIs "
   contactDetails:
