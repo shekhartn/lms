@@ -18,11 +18,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @RestController
 @RequestMapping("/lms")
 public class LeaveController {
-
+    private static final Logger logger = LoggerFactory.getLogger(LeaveController.class);
     @Autowired
     private ILeaveService service;
     @Autowired
@@ -31,7 +32,8 @@ public class LeaveController {
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
-    private  ContactInfoDto contactInfo;
+    private ContactInfoDto contactInfo;
+
     @GetMapping
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public List<Leave> getAllTheProducts() {
@@ -49,6 +51,7 @@ public class LeaveController {
     public List<Leave> getLeaveDetailsByEmployeeCode(@RequestBody LeaveRequest leaveRequest) {
         return service.getLeaveDetailsByEmployeeCode(leaveRequest);
     }
+
     @PostMapping("/gettimeoffhistory")
     @PreAuthorize("hasAuthority('ROLE_USER')")
     public List<SearchHistoryVO> getTimeOffHistory(@RequestBody LeaveRequest leaveRequest) {
@@ -68,7 +71,9 @@ public class LeaveController {
     }
 
     @GetMapping("/contact-info")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public ResponseEntity<ContactInfoDto> getContactInfo() {
+        logger.info("Leave API called");
         return ResponseEntity.ok(contactInfo);
     }
 }

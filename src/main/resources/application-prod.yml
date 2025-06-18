@@ -1,10 +1,10 @@
 security:
   photon:
     username: photonprod
-    password: photonprod@123
+    password: cGhvdG9ucHJvZEAxMjM=
   personal:
     username: bharath
-    password: bharath@123
+    password: YmhhcmF0aEAxMjM=
 lms:
   message: "Welcome to Leave Services related PROD APIs "
   contactDetails:
